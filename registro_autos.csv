@@ -1,15 +1,14 @@
 ID_auto,Marca,Modelo,Ano,Tipo_Combustible
-1,Audi,A4,2013,Gasolina
+1,Chevrolet,Onix,2011,Eléctrico
 2,Audi,Q5,2017,Gasolina
-3,BMW,X5,2019,Diésel
-4,BMW,Serie 3,2011,Híbrido
-5,Chevrolet,Tracker,2020,Diésel
-6,Chevrolet,Aveo,2013,Híbrido
-7,Chevrolet,Onix,2011,Eléctrico
-8,Chevrolet,Silverado,2018,Gasolina
-9,Ford,Explorer,2022,Eléctrico
-10,Ford,Mustang,2024,Eléctrico
-11,Toyota,Hilux,2019,Disel
-
-12,Subaru,WRX,2025,Gasolina
-13,Mazda,B4000,1994,Gasolina
+3,Toyota,Hilux,2019,Disel
+4,Chevrolet,Tracker,2020,Diésel
+5,Audi,A4,2013,Gasolina
+6,Mazda,B4000,1994,Gasolina
+7,Ford,Explorer,2022,Eléctrico
+8,BMW,Serie 3,2011,Híbrido
+9,Subaru,WRX,2025,Gasolina
+10,Chevrolet,Aveo,2013,Híbrido
+11,BMW,X5,2019,Diésel
+12,Ford,Mustang,2024,Eléctrico
+13,Chevrolet,Silverado,2018,Gasolina

@@ -39,23 +39,8 @@ def lee_archivo(ruta):
     return datos, encabezados
 
 
-def ordena_marca(datos):
-    datos.sort(key=lambda fila: fila["Marca"])
-    return datos
-
-
-def ordena_modelo(datos):
-    datos.sort(key=lambda fila: fila["Modelo"])
-    return datos
-
-
-def ordena_ano(datos):
-    datos.sort(key=lambda fila: fila["Ano"])
-    return datos
-
-
-def ordena_combustible(datos):
-    datos.sort(key=lambda fila: fila["Tipo_Combustible"])
+def ordena(datos, campo):
+    datos.sort(key=lambda fila: fila[campo])
     return datos
 
 
@@ -98,47 +83,32 @@ def main():
         op = input("\nESCOJE UNA OPCION: ")
 
         if op == "1":
-            try:
-                datos, encabezados = lee_archivo(registro_autos)
-                mostrar_datos(datos, encabezados)
-            except FileNotFoundError:
-                print("No se encontro el archivo de registro.")
+            datos, encabezados = lee_archivo(registro_autos)
+            mostrar_datos(datos, encabezados)
         elif op == "2":
-            try:
-                datos, encabezados = lee_archivo(registro_autos)
-                ordenados = ordena_marca(list(datos))
-                mostrar_datos(ordenados, encabezados)
-                archivo_ordenado(ordenados, encabezados)
-                print("Archivo ordenado por marca.")
-            except FileNotFoundError:
-                print("No se encontro el archivo de registro.")
+            datos, encabezados = lee_archivo(registro_autos)
+            ordenados = ordena(list(datos), "Marca")
+            mostrar_datos(ordenados, encabezados)
+            archivo_ordenado(ordenados, encabezados)
+            print("Archivo ordenado por marca.")
         elif op == "3":
-            try:
-                datos, encabezados = lee_archivo(registro_autos)
-                ordenados = ordena_modelo(list(datos))
-                mostrar_datos(ordenados, encabezados)
-                archivo_ordenado(ordenados, encabezados)
-                print("Archivo ordenado por modelo.")
-            except FileNotFoundError:
-                print("No se encontro el archivo de registro.")
+            datos, encabezados = lee_archivo(registro_autos)
+            ordenados = ordena(list(datos), "Modelo")
+            mostrar_datos(ordenados, encabezados)
+            archivo_ordenado(ordenados, encabezados)
+            print("Archivo ordenado por modelo.")
         elif op == "4":
-            try:
-                datos, encabezados = lee_archivo(registro_autos)
-                ordenados = ordena_ano(list(datos))
-                mostrar_datos(ordenados, encabezados)
-                archivo_ordenado(ordenados, encabezados)
-                print("Archivo ordenado por anio.")
-            except FileNotFoundError:
-                print("No se encontro el archivo de registro.")
+            datos, encabezados = lee_archivo(registro_autos)
+            ordenados = ordena(list(datos), "Ano")
+            mostrar_datos(ordenados, encabezados)
+            archivo_ordenado(ordenados, encabezados)
+            print("Archivo ordenado por anio.")
         elif op == "5":
-            try:
-                datos, encabezados = lee_archivo(registro_autos)
-                ordenados = ordena_combustible(list(datos))
-                mostrar_datos(ordenados, encabezados)
-                archivo_ordenado(ordenados, encabezados)
-                print("Archivo ordenado por tipo de combustible.")
-            except FileNotFoundError:
-                print("No se encontro el archivo de registro.")
+            datos, encabezados = lee_archivo(registro_autos)
+            ordenados = ordena(list(datos), "Tipo_Combustible")
+            mostrar_datos(ordenados, encabezados)
+            archivo_ordenado(ordenados, encabezados)
+            print("Archivo ordenado por tipo de combustible.")
         elif op == "6":
             agregar_auto()
             print("\nAuto agregado.")
