@@ -72,13 +72,14 @@ def main():
     while True:
         print("\n=== SISTEMA DE REGISTROS DE AUTOS ===\n")
         print("1. Mostrar datos")
-        print("2. Ordenar por marca")
-        print("3. Ordenar por modelo")
-        print("4. Ordenar por anio")
-        print("5. Ordenar por tipo de combustible")
-        print("6. Agregar registro")
-        print("7. Eliminar registro")
-        print("8. Salir")
+        print("2. Ordenar por ID")
+        print("3. Ordenar por marca")
+        print("4. Ordenar por modelo")
+        print("5. Ordenar por anio")
+        print("6. Ordenar por tipo de combustible")
+        print("7. Agregar registro")
+        print("8. Eliminar registro")
+        print("9. Salir")
 
         op = input("\nESCOJE UNA OPCION: ")
 
@@ -87,34 +88,40 @@ def main():
             mostrar_datos(datos, encabezados)
         elif op == "2":
             datos, encabezados = lee_archivo(registro_autos)
+            ordenados = sorted(list(datos), key=lambda fila: int(fila["ID_auto"]))
+            mostrar_datos(ordenados, encabezados)
+            archivo_ordenado(ordenados, encabezados)
+            print("Archivo ordenado por ID.")
+        elif op == "3":
+            datos, encabezados = lee_archivo(registro_autos)
             ordenados = ordena(list(datos), "Marca")
             mostrar_datos(ordenados, encabezados)
             archivo_ordenado(ordenados, encabezados)
             print("Archivo ordenado por marca.")
-        elif op == "3":
+        elif op == "4":
             datos, encabezados = lee_archivo(registro_autos)
             ordenados = ordena(list(datos), "Modelo")
             mostrar_datos(ordenados, encabezados)
             archivo_ordenado(ordenados, encabezados)
             print("Archivo ordenado por modelo.")
-        elif op == "4":
+        elif op == "5":
             datos, encabezados = lee_archivo(registro_autos)
             ordenados = ordena(list(datos), "Ano")
             mostrar_datos(ordenados, encabezados)
             archivo_ordenado(ordenados, encabezados)
             print("Archivo ordenado por anio.")
-        elif op == "5":
+        elif op == "6":
             datos, encabezados = lee_archivo(registro_autos)
             ordenados = ordena(list(datos), "Tipo_Combustible")
             mostrar_datos(ordenados, encabezados)
             archivo_ordenado(ordenados, encabezados)
             print("Archivo ordenado por tipo de combustible.")
-        elif op == "6":
+        elif op == "7":
             agregar_auto()
             print("\nAuto agregado.")
-        elif op == "7":
-            eliminar_auto()
         elif op == "8":
+            eliminar_auto()
+        elif op == "9":
             break
         else:
             print("Opcion no valida.")
